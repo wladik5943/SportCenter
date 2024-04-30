@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(schema = "sportcenter", name = "users")
-public class User {
+public class   User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

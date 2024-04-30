@@ -1,18 +1,20 @@
 package by.tms.sportcenter;
 
-import by.tms.sportcenter.entity.User;
-import by.tms.sportcenter.service.UserServiceImpl;
-import by.tms.sportcenter.service.interf.UserService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
-@Configuration
-@ComponentScan("by.tms.sportcenter")
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@SpringBootApplication
+@EnableJpaRepositories
+@EnableTransactionManagement
 public class Main {
     public static void main(String[] args) {
+
+        SpringApplication.run(Main.class, args);
 //        User user = new User();
 //        user.setName("vlad");
 //        user.setSurname("zel");
@@ -28,12 +30,12 @@ public class Main {
 //        userRepository.all().forEach(System.out::println);
 
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
-        UserService userService = ctx.getBean("userServiceImpl", UserService.class);
-
-
-        List<User> users = userService.allUsers();
-        users.forEach(System.out::println);
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
+//        UserService userService = ctx.getBean("userServiceImpl", UserService.class);
+//
+//
+//        List<User> users = userService.allUsers();
+//        users.forEach(System.out::println);
 
     }
 }

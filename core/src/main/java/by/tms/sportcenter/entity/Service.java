@@ -12,4 +12,5 @@ public class Service {
     private Long id;
     private String name;
     private int cost;
+
 }
